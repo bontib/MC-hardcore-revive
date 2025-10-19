@@ -28,7 +28,7 @@ A PaperMC plugin that brings **a second chance to Hardcore mode** — let your f
 
 ## 🧰 Requirements
 
-- **Minecraft:** 1.21.1 (or newer)  
+- **Minecraft:** 1.21.10 (or newer)  
 - **Server:** [PaperMC](https://papermc.io)  
 - **Java:** 17+
 
