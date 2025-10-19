@@ -1,4 +1,4 @@
-# 🪦 Minecraft hardcore revivce
+# 🪦 Minecraft hardcore revive
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.1-blue.svg)](https://www.minecraft.net/)
