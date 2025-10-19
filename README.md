@@ -64,17 +64,8 @@ src/main/java/com/yourname/resurrection/
 ### 🔹 Craft the Resurrection Stone
 
 By default, the recipe is:
-```
-D G D
-G N G
-D G D
-```
 
-| Symbol | Item |
-|:------:|:-----|
-| N | Nether Star |
-| G | Gold Ingot |
-| D | Diamond |
+![Resurrection Stone Recipe](img/crafting_recepie_reserection_stone.png)
 
 ---
 
