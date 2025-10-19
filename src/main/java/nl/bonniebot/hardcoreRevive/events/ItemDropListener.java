@@ -71,6 +71,8 @@ public class ItemDropListener implements Listener {
                             }
 
                             revivalManager.revivePlayer(boundName, loc);
+                            block.setType(Material.CAULDRON);
+
                             cancel();
                             return;
                         }
