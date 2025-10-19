@@ -3,6 +3,8 @@ package nl.bonniebot.hardcoreRevive.utils;
 import nl.bonniebot.hardcoreRevive.data.DeadPlayerStorage;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 import java.util.UUID;
 
@@ -52,8 +54,17 @@ public class RevivalManager {
         player.setFoodLevel(20);
         player.getInventory().clear();
 
+        // Give Strength and Fire Resistance for 10 seconds (10s = 200 ticks)
+        PotionEffectType strength = PotionEffectType.getByName("strength");
+        PotionEffectType fireResist = PotionEffectType.getByName("fire_resistance");
+        if (strength != null) player.addPotionEffect(new PotionEffect(strength, 200, 0));
+        if (fireResist != null) player.addPotionEffect(new PotionEffect(fireResist, 200, 0));
+
         // Play Totem of Undying animation without giving the item
-        player.playEffect(EntityEffect.TOTEM_RESURRECT);
+        // Use particles + sound instead of the deprecated EntityEffect
+        Location playerLoc = player.getLocation().add(0, 1, 0);
+        world.spawnParticle(Particle.TOTEM_OF_UNDYING, playerLoc, 10, 0.5, 0.5, 0.5, 0.1);
+        world.playSound(playerLoc, Sound.ITEM_TOTEM_USE, 1f, 1f);
 
         storage.removeDeadPlayer(uuid);
 
