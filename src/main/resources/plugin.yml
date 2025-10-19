@@ -4,3 +4,14 @@ main: nl.bonniebot.hardcoreRevive.HardcoreRevive
 api-version: '1.21.10'
 authors: [ Siderealfool0 ]
 description: A plugin that allows you to bring back your friends
+
+commands:
+  bindrevive:
+    description: Bind a Resurrection Stone to a player’s soul.
+    usage: /bindrevive <player>
+    permission: resurrection.bind
+
+permissions:
+  resurrection.bind:
+    description: Allows player to bind a soul to a Resurrection Stone.
+    default: true
