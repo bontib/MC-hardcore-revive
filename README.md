@@ -36,8 +36,8 @@ A PaperMC plugin that brings **a second chance to Hardcore mode** — let your f
 
 ## 🧱 Project Structure
 ```
-src/main/java/com/yourname/resurrection/
-├── ResurrectionPlugin.java # Main plugin entry point
+src/main/java/nl/bonniebot/hardcoreRevive/
+├── HardcoreRevive.java # Main plugin entry point
 │
 ├── commands/
 │ └── BindReviveCommand.java # /bindrevive command
