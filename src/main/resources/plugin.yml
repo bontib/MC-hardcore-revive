@@ -1,0 +1,6 @@
+name: HardcoreRevive
+version: '1.0-SNAPSHOT'
+main: nl.bonniebot.hardcoreRevive.HardcoreRevive
+api-version: '1.21.10'
+authors: [ Siderealfool0 ]
+description: A plugin that allows you to bring back your friends
