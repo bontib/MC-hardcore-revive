@@ -7,6 +7,7 @@ import nl.bonniebot.hardcoreRevive.events.PlayerDeathListener;
 import nl.bonniebot.hardcoreRevive.items.RecipeManager;
 import nl.bonniebot.hardcoreRevive.items.ResurrectionStone;
 import nl.bonniebot.hardcoreRevive.utils.RevivalManager;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class HardcoreRevive extends JavaPlugin {
@@ -15,13 +16,23 @@ public final class HardcoreRevive extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getLogger().info("HardcoreRevive has been enabled!");
+
+        // Ensure default config is saved so users can edit it
+        this.saveDefaultConfig();
+
         ResurrectionStone stoneUtil = new ResurrectionStone(this);
         DeadPlayerStorage storage = new DeadPlayerStorage(this);
         BindReviveCommand bindReviveCommand = new BindReviveCommand(this, stoneUtil);
         RevivalManager revivalManager = new RevivalManager( storage);
 
-        getCommand("bindrevive").setExecutor(bindReviveCommand);
-        getCommand("bindrevive").setTabCompleter(bindReviveCommand);
+        // Safely register command executor and tab completer
+        PluginCommand bindCmd = getCommand("bindrevive");
+        if (bindCmd != null) {
+            bindCmd.setExecutor(bindReviveCommand);
+            bindCmd.setTabCompleter(bindReviveCommand);
+        } else {
+            getLogger().warning("Command 'bindrevive' is not defined in plugin.yml; cannot register executor/tab completer.");
+        }
 
         // Register custom events
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(storage), this);

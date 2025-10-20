@@ -1,0 +1,22 @@
+# Configuration for HardcoreRevive plugin
+# You can edit the Resurrection Stone crafting recipe below.
+# "shape" is a list of 3 strings (each string is one crafting row).
+# Use single characters to mark ingredient slots. Use a space for an empty slot.
+# "ingredients" maps a character to a Material name (use Bukkit Material enum names).
+
+resurrection_stone:
+  # Set to false to skip registering the recipe
+  enabled: true
+
+  # Crafting grid shape (3 rows)
+  shape:
+    - "DGD"
+    - "GNG"
+    - "DGD"
+
+  # Map characters used in the shape to Materials (Bukkit Material names)
+  ingredients:
+    N: "NETHER_STAR"
+    G: "GOLD_INGOT"
+    D: "DIAMOND"
+
